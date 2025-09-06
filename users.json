@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "cdu": "001",
+      "login": "admin",
+      "senha": "123456",
+      "nivel_acesso": "admin"
+    },
+    {
+      "cdu": "002",
+      "login": "maria",
+      "senha": "senhaMaria",
+      "nivel_acesso": "usuario"
+    }
+  ]
+}
