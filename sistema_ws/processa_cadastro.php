@@ -30,7 +30,7 @@ if (!in_array($tipo_usuario, $tipos_validos)) {
     exit();
 }
 
-// Senha (somente funcionário e administrador)
+// Senha opcional
 $ds_senha = null;
 if ($tipo_usuario !== 'cliente') {
     if (empty($_POST['ds_senha']) || empty($_POST['confirmar_senha'])) {
@@ -46,62 +46,7 @@ if ($tipo_usuario !== 'cliente') {
     $ds_senha = hash('sha256', $_POST['ds_senha']);
 }
 
-/**
- * ======================
- * SE O USUÁRIO FOR ADM
- * ======================
- */
-if ($tipo_usuario === 'administrador') {
-
-    // Verifica duplicidade na tabela de administradores
-    $sql_check = "SELECT cd_art FROM user_arthur WHERE ds_nome = ? OR ds_cpf = ? LIMIT 1";
-    $stmt = $conn->prepare($sql_check);
-    $stmt->bind_param('ss', $ds_usuario, $ds_cpf);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->close();
-        $_SESSION['erro'] = "Administrador já cadastrado.";
-        header('Location: cadastro.php');
-        exit();
-    }
-    $stmt->close();
-
-    // Inserção na tabela user_arthur
-    $sql_adm = "INSERT INTO user_arthur (ds_nome, ds_senha, ds_cpf, ds_entidade, dt_acesso, nr_acesso, ip_atual) 
-                VALUES (?, ?, ?, ?, NOW(), 0, ?)";
-    $stmt_adm = $conn->prepare($sql_adm);
-    $ip = $_SERVER['REMOTE_ADDR']; // pega o IP atual
-    $entidade = "ADM"; // você pode mudar conforme a regra do sistema
-
-    $stmt_adm->bind_param(
-        'sssss',
-        $ds_usuario,
-        $ds_senha,
-        $ds_cpf,
-        $entidade,
-        $ip
-    );
-
-    if ($stmt_adm->execute()) {
-        $_SESSION['sucesso'] = "Administrador cadastrado com sucesso!";
-    } else {
-        $_SESSION['erro'] = "Erro ao cadastrar administrador: " . $stmt_adm->error;
-    }
-
-    $stmt_adm->close();
-    header('Location: cadastro.php');
-    exit();
-}
-
-/**
- * ======================
- * FUNCIONÁRIO OU CLIENTE
- * ======================
- */
-
-// Verifica duplicidade na tabela usuarios
+// Verifica usuário ou CPF existente
 $sql = "SELECT cd_usuario FROM usuarios WHERE ds_usuario = ? OR ds_cpf = ? LIMIT 1";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('ss', $ds_usuario, $ds_cpf);
@@ -115,9 +60,8 @@ if ($stmt->num_rows > 0) {
 }
 $stmt->close();
 
-// Inserção na tabela usuarios
-$sql = "INSERT INTO usuarios (ds_usuario, ds_cpf, ds_email, ds_celular, ds_endereco, ds_senha, dt_nascimento, ds_situacao, tipo_usuario) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+// Inserir usuário
+$sql = "INSERT INTO usuarios (ds_usuario, ds_cpf, ds_email, ds_celular, ds_endereco, ds_senha, dt_nascimento, ds_situacao, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
     'sssssssss',
@@ -133,10 +77,9 @@ $stmt->bind_param(
 );
 
 if ($stmt->execute()) {
+    // Se for cliente, cadastra também na tabela clientes
     if ($tipo_usuario === 'cliente') {
-        // Cadastro adicional em clientes
-        $sql_cliente = "INSERT INTO clientes (nome_cliente, cpf_cliente, email_cliente, celular_cliente, endereco_cliente, data_nascimento) 
-                        VALUES (?, ?, ?, ?, ?, ?)";
+        $sql_cliente = "INSERT INTO clientes (nome_cliente, cpf_cliente, email_cliente, celular_cliente, endereco_cliente, data_nascimento) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt_cliente = $conn->prepare($sql_cliente);
         $stmt_cliente->bind_param(
             'ssssss',
@@ -152,11 +95,10 @@ if ($stmt->execute()) {
     }
 
     $_SESSION['sucesso'] = "Usuário cadastrado com sucesso!";
+    header('Location: cadastro.php');
+    exit();
 } else {
     $_SESSION['erro'] = "Erro ao cadastrar usuário: " . $stmt->error;
+    header('Location: cadastro.php');
+    exit();
 }
-
-$stmt->close();
-header('Location: cadastro.php');
-exit();
-?>

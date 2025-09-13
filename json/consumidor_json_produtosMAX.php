@@ -1,6 +1,5 @@
 <?php 
-
-$json = file_get_contents("http://192.168.0.200/json/produtos_ws.php?cdu=1&pwd=senha");
+$json = file_get_contents("http://192.168.0.200/json/produtos_ws.php?ds_cpf=11163141933&ds_senha=arthur1");
 $obj = json_decode($json);
 
 if (json_last_error() != 0) {
@@ -11,7 +10,7 @@ if (json_last_error() != 0) {
             echo ' - profundidade maxima excedida';
         break;
         case JSON_ERROR_STATE_MISMATCH:
-            echo ' - Erro de sintaxe genÃ©rico';
+            echo ' - Erro de sintaxe genérico';
         break;
         case JSON_ERROR_CTRL_CHAR:
             echo ' - Caracter de controle encontrado';
@@ -20,10 +19,10 @@ if (json_last_error() != 0) {
             echo ' - Erro de sintaxe! String JSON mal-formatado!';
         break;
         case JSON_ERROR_UTF8:
-            echo ' - Erro na codificaÃ§Ã£o UTF-8';
+            echo ' - Erro na codificação UTF-8';
         break;
         default:
-            echo ' â€“ Erro desconhecido';
+            echo ' – Erro desconhecido';
         break;
     }
 }

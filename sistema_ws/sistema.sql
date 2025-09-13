@@ -1,0 +1,827 @@
+# MySQL-Front 3.2  (Build 7.11)
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES 'utf8mb4' */;
+
+CREATE TABLE `cadastros` (
+  `cd_nome` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_nome` varchar(100) DEFAULT NULL,
+  `ds_fone` varchar(50) DEFAULT NULL,
+  `ds_email` varchar(50) DEFAULT NULL,
+  `ds_cidade` varchar(50) DEFAULT NULL,
+  `origem` varchar(15) DEFAULT NULL,
+  `ds_cpf` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`cd_nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=84457 DEFAULT CHARSET=latin1;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `cadastros` VALUES (3,'carlos uberaba','4864','asdf asdf asf ','3245345 345 ',NULL,NULL);
+INSERT INTO `cadastros` VALUES (13,'thais da silva','7364656 ',NULL,NULL,NULL,NULL);
+INSERT INTO `cadastros` VALUES (16,'Carlinhos Soares','49 999887766',NULL,'ccccc',NULL,NULL);
+INSERT INTO `cadastros` VALUES (17,'wesley','2938',NULL,NULL,NULL,NULL);
+INSERT INTO `cadastros` VALUES (21,'joao dagua da siilva','3444 9898',NULL,'3131',NULL,NULL);
+INSERT INTO `cadastros` VALUES (84411,'chico de souza','ssss','chico@gmail.com',NULL,'Max','14361243561');
+INSERT INTO `cadastros` VALUES (84413,'maria pitanga',NULL,'maria@ggg.com',NULL,'Max','13461243636');
+INSERT INTO `cadastros` VALUES (84454,'max asdd fasf sa','99 88771122',NULL,NULL,NULL,NULL);
+INSERT INTO `cadastros` VALUES (84455,'roger maciel ribeiro','49 988770011',NULL,NULL,NULL,NULL);
+INSERT INTO `cadastros` VALUES (84456,'ffffffffff','363463111',NULL,NULL,NULL,NULL);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `categorias` (
+  `cd` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_categoria` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`cd`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `categorias` VALUES (2,'Materiais');
+
+CREATE TABLE `cidades` (
+  `cd_cidade` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_cidade` varchar(50) DEFAULT NULL,
+  `cd_cidade_ibge` int(11) DEFAULT NULL,
+  `ds_uf` varchar(3) DEFAULT NULL,
+  `cd_uf_ibge` int(11) DEFAULT NULL,
+  `vl_latitude` double(10,8) DEFAULT NULL,
+  `vl_longitude` double(10,8) DEFAULT NULL,
+  PRIMARY KEY (`cd_cidade`)
+) ENGINE=MyISAM AUTO_INCREMENT=9860 DEFAULT CHARSET=latin1;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `cidades` VALUES (8209,'Abdon Batista',4200051,'SC',42,-27.6111,-51.0225);
+INSERT INTO `cidades` VALUES (8210,'Abelardo Luz',4200101,'SC',42,-26.56722,-52.33389);
+INSERT INTO `cidades` VALUES (8211,'Agrolandia',4200200,'SC',42,-27.4117,-49.8256);
+INSERT INTO `cidades` VALUES (8212,'Agronomica',4200309,'SC',42,-27.265,-49.71111);
+INSERT INTO `cidades` VALUES (8213,'Agua Doce',4200408,'SC',42,-26.9978,-51.5561);
+INSERT INTO `cidades` VALUES (8214,'Aguas Brancas',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8215,'Aguas Claras',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8216,'Aguas de Chapeco',4200507,'SC',42,-27.0702,-52.9866);
+INSERT INTO `cidades` VALUES (8217,'Aguas Frias',4200556,'SC',42,-26.88,-52.8592);
+INSERT INTO `cidades` VALUES (8218,'Aguas Mornas',4200606,'SC',42,-27.69389,-48.82361);
+INSERT INTO `cidades` VALUES (8219,'Aguti',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8220,'Aiure',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8221,'Alfredo Wagner',4200705,'SC',42,-27.7,-49.3333);
+INSERT INTO `cidades` VALUES (8222,'Alto Alegre',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8223,'Alto Bela Vista',4200754,'SC',42,-27.45389,-51.91111);
+INSERT INTO `cidades` VALUES (8224,'Alto da Serra',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8225,'Anchieta',4200804,'SC',42,-26.5344,-53.3311);
+INSERT INTO `cidades` VALUES (8226,'Angelina',4200903,'SC',42,-27.5686,-48.9853);
+INSERT INTO `cidades` VALUES (8227,'Anita Garibaldi',4201000,'SC',42,-27.6891,-51.13);
+INSERT INTO `cidades` VALUES (8228,'Anitapolis',4201109,'SC',42,-27.9016,-49.1286);
+INSERT INTO `cidades` VALUES (8229,'Anta Gorda',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8230,'Antonio Carlos',4201208,'SC',42,-27.5169,-48.7675);
+INSERT INTO `cidades` VALUES (8231,'Apiuna',4201257,'SC',42,-27.03556,-49.38972);
+INSERT INTO `cidades` VALUES (8232,'Arabuta',4201273,'SC',42,-27.1603,-52.1417);
+INSERT INTO `cidades` VALUES (8233,'Araquari',4201307,'SC',42,-26.37,-48.72222);
+INSERT INTO `cidades` VALUES (8234,'Ararangua',4201406,'SC',42,-28.9347,-49.4855);
+INSERT INTO `cidades` VALUES (8235,'Armazem',4201505,'SC',42,-28.2619,-49.0175);
+INSERT INTO `cidades` VALUES (8236,'Arnopolis',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8237,'Arroio Trinta',4201604,'SC',42,-26.93278,-51.33917);
+INSERT INTO `cidades` VALUES (8238,'Arvoredo',4201653,'SC',42,-27.0744,-52.4558);
+INSERT INTO `cidades` VALUES (8239,'Ascurra',4201703,'SC',42,-26.95528,-49.37556);
+INSERT INTO `cidades` VALUES (8240,'Atalanta',4201802,'SC',42,-27.42,-49.7811);
+INSERT INTO `cidades` VALUES (8241,'Aterrado Torto',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8242,'Aurora',4201901,'SC',42,-27.315,-49.6375);
+INSERT INTO `cidades` VALUES (8243,'Azambuja',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8244,'Baia Alta',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8245,'Balneario Arroio do Silva',4201950,'SC',42,-28.9839,-49.4128);
+INSERT INTO `cidades` VALUES (8246,'Balneario Barra do Sul',4202057,'SC',42,-26.45556,-48.61194);
+INSERT INTO `cidades` VALUES (8247,'Balneario Camboriu',4202008,'SC',42,-26.9905,-48.6347);
+INSERT INTO `cidades` VALUES (8248,'Balneario Gaivota',4202073,'SC',42,-29.1567,-49.5794);
+INSERT INTO `cidades` VALUES (8249,'Balneario Morro dos Conventos',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8250,'Bandeirante',4202081,'SC',42,-26.76861,-53.63833);
+INSERT INTO `cidades` VALUES (8251,'Barra Bonita',4202099,'SC',42,-26.6544,-53.44);
+INSERT INTO `cidades` VALUES (8252,'Barra Clara',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8253,'Barra da Lagoa',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8254,'Barra da Prata',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8255,'Barra Fria',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8256,'Barra Grande',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8257,'Barra Velha',4202107,'SC',42,-26.63222,-48.68472);
+INSERT INTO `cidades` VALUES (8258,'Barreiros',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8259,'Barro Branco',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8260,'Bateias de Baixo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8261,'Bela Vista',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8262,'Bela Vista do Sul',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8263,'Bela Vista do Toldo',4202131,'SC',42,-26.2733,-50.4644);
+INSERT INTO `cidades` VALUES (8264,'Belmonte',4202156,'SC',42,-26.84139,-53.57556);
+INSERT INTO `cidades` VALUES (8265,'Benedito Novo',4202206,'SC',42,-26.7828,-49.3644);
+INSERT INTO `cidades` VALUES (8266,'Biguacu',4202305,'SC',42,-27.4941,-48.6555);
+INSERT INTO `cidades` VALUES (8267,'Blumenau',4202404,'SC',42,-26.9191,-49.0661);
+INSERT INTO `cidades` VALUES (8268,'Bocaina do Sul',4202438,'SC',42,-27.7444,-49.9444);
+INSERT INTO `cidades` VALUES (8269,'Boiteuxburgo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8270,'Bom Jardim da Serra',4202503,'SC',42,-28.3369,-49.6244);
+INSERT INTO `cidades` VALUES (8271,'Bom Jesus',4202537,'SC',42,-26.7339,-52.3942);
+INSERT INTO `cidades` VALUES (8272,'Bom Jesus do Oeste',4202578,'SC',42,-26.68972,-53.09833);
+INSERT INTO `cidades` VALUES (8273,'Bom Retiro',4202602,'SC',42,-27.7969,-49.4888);
+INSERT INTO `cidades` VALUES (8274,'Bom Sucesso',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8275,'Bombinhas',4202453,'SC',42,-27.13167,-48.52778);
+INSERT INTO `cidades` VALUES (8276,'Botuvera',4202701,'SC',42,-27.1991,-49.0747);
+INSERT INTO `cidades` VALUES (8277,'Braco do Norte',4202800,'SC',42,-28.275,-49.1656);
+INSERT INTO `cidades` VALUES (8278,'Braco do Trombudo',4202859,'SC',42,-27.35778,-49.88556);
+INSERT INTO `cidades` VALUES (8279,'Brunopolis',4202875,'SC',42,-27.3058,-50.8683);
+INSERT INTO `cidades` VALUES (8280,'Brusque',4202909,'SC',42,-27.098,-48.9172);
+INSERT INTO `cidades` VALUES (8281,'Cacador',4203006,'SC',42,-26.77841,-51.01348);
+INSERT INTO `cidades` VALUES (8282,'Cachoeira de Fatima',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8283,'Cachoeira do Bom Jesus',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8284,'Caibi',4203105,'SC',42,-27.0716,-53.2475);
+INSERT INTO `cidades` VALUES (8285,'Calmon',4203154,'SC',42,-26.5997,-51.0972);
+INSERT INTO `cidades` VALUES (8286,'Camboriu',4203204,'SC',42,-27.0252,-48.6544);
+INSERT INTO `cidades` VALUES (8287,'Cambuinzal',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8288,'Campeche',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8289,'Campinas',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8290,'Campo Alegre',4203303,'SC',42,-26.1922,-49.2655);
+INSERT INTO `cidades` VALUES (8291,'Campo Belo do Sul',4203402,'SC',42,-27.8988,-50.7608);
+INSERT INTO `cidades` VALUES (8292,'Campo Ere',4203501,'SC',42,-26.3941,-53.078);
+INSERT INTO `cidades` VALUES (8293,'Campos Novos',4203600,'SC',42,-27.4013,-51.2247);
+INSERT INTO `cidades` VALUES (8294,'Canasvieiras',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8295,'Canelinha',4203709,'SC',42,-27.2647,-48.7675);
+INSERT INTO `cidades` VALUES (8296,'Canoas',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8297,'Canoinhas',4203808,'SC',42,-26.1769,-50.3897);
+INSERT INTO `cidades` VALUES (8298,'Capao Alto',4203253,'SC',42,-27.9369,-50.5119);
+INSERT INTO `cidades` VALUES (8299,'Capinzal',4203907,'SC',42,-27.3433,-51.6116);
+INSERT INTO `cidades` VALUES (8300,'Capivari de Baixo',4203956,'SC',42,-28.4447,-48.9578);
+INSERT INTO `cidades` VALUES (8301,'Caraiba',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8302,'Catanduvas',4204004,'SC',42,-27.0703,-51.6614);
+INSERT INTO `cidades` VALUES (8303,'Catuira',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8304,'Caxambu do Sul',4204103,'SC',42,-27.1608,-52.8783);
+INSERT INTO `cidades` VALUES (8305,'Cedro Alto',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8306,'Celso Ramos',4204152,'SC',42,-27.6344,-51.3364);
+INSERT INTO `cidades` VALUES (8307,'Cerro Negro',4204178,'SC',42,-27.79528,-50.87583);
+INSERT INTO `cidades` VALUES (8308,'Chapadao do Lageado',4204194,'SC',42,-27.5906,-49.5539);
+INSERT INTO `cidades` VALUES (8309,'Chapeco',4204202,'SC',42,-27.0963,-52.618);
+INSERT INTO `cidades` VALUES (8310,'Claraiba',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8311,'Cocal do Sul',4204251,'SC',42,-28.60111,-49.32583);
+INSERT INTO `cidades` VALUES (8312,'Colonia Santa Tereza',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8313,'Colonia Santana',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8314,'Concordia',4204301,'SC',42,-27.2317,-52.0294);
+INSERT INTO `cidades` VALUES (8315,'Cordilheira Alta',4204350,'SC',42,-26.9844,-52.6033);
+INSERT INTO `cidades` VALUES (8316,'Coronel Freitas',4204400,'SC',42,-26.90861,-52.70306);
+INSERT INTO `cidades` VALUES (8317,'Coronel Martins',4204459,'SC',42,-26.5122,-52.6692);
+INSERT INTO `cidades` VALUES (8318,'Correia Pinto',4204558,'SC',42,-27.5847,-50.3611);
+INSERT INTO `cidades` VALUES (8319,'Corupa',4204509,'SC',42,-26.425,-49.2427);
+INSERT INTO `cidades` VALUES (8320,'Criciuma',4204608,'SC',42,-28.6772,-49.3694);
+INSERT INTO `cidades` VALUES (8321,'Cunha Pora',4204707,'SC',42,-26.8936,-53.1681);
+INSERT INTO `cidades` VALUES (8322,'Cunhatai',4204756,'SC',42,-26.96944,-53.09333);
+INSERT INTO `cidades` VALUES (8323,'Curitibanos',4204806,'SC',42,-27.2827,-50.5841);
+INSERT INTO `cidades` VALUES (8324,'Dal Pai',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8325,'Dalbergia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8326,'Descanso',4204905,'SC',42,-26.8258,-53.5016);
+INSERT INTO `cidades` VALUES (8327,'Dionisio Cerqueira',4205001,'SC',42,-26.2547,-53.6394);
+INSERT INTO `cidades` VALUES (8328,'Dona Emma',4205100,'SC',42,-26.9847,-49.7256);
+INSERT INTO `cidades` VALUES (8329,'Doutor Pedrinho',4205159,'SC',42,-26.71444,-49.48333);
+INSERT INTO `cidades` VALUES (8330,'Engenho Velho',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8331,'Enseada de Brito',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8332,'Entre Rios',4205175,'SC',42,-26.7236,-52.5606);
+INSERT INTO `cidades` VALUES (8333,'Ermo',4205191,'SC',42,-28.9825,-49.64361);
+INSERT INTO `cidades` VALUES (8334,'Erval Velho',4205209,'SC',42,-27.2756,-51.4419);
+INSERT INTO `cidades` VALUES (8335,'Espinilho',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8336,'Estacao Cocal',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8337,'Faxinal dos Guedes',4205308,'SC',42,-26.85472,-52.25611);
+INSERT INTO `cidades` VALUES (8338,'Fazenda Zandavalli',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8339,'Felipe Schmidt',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8340,'Figueira',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8341,'Flor do Sertao',4205357,'SC',42,-26.7775,-53.3475);
+INSERT INTO `cidades` VALUES (8342,'Florianopolis',4205407,'SC',42,-27.5963,-48.5491);
+INSERT INTO `cidades` VALUES (8343,'Formosa do Sul',4205431,'SC',42,-26.6466,-52.7938);
+INSERT INTO `cidades` VALUES (8344,'Forquilhinha',4205456,'SC',42,-28.7472,-49.4719);
+INSERT INTO `cidades` VALUES (8345,'Fragosos',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8346,'Fraiburgo',4205506,'SC',42,-27.0261,-50.9211);
+INSERT INTO `cidades` VALUES (8347,'Frederico Wastner',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8348,'Frei Rogerio',4205555,'SC',42,-27.1747,-50.8047);
+INSERT INTO `cidades` VALUES (8349,'Galvao',4205605,'SC',42,-26.455,-52.68583);
+INSERT INTO `cidades` VALUES (8350,'Garcia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8351,'Garopaba',4205704,'SC',42,-28.023,-48.6133);
+INSERT INTO `cidades` VALUES (8352,'Garuva',4205803,'SC',42,-26.0267,-48.855);
+INSERT INTO `cidades` VALUES (8353,'Gaspar',4205902,'SC',42,-26.93139,-48.95889);
+INSERT INTO `cidades` VALUES (8354,'GoioEn',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8355,'Governador Celso Ramos',4206009,'SC',42,-27.3147,-48.5592);
+INSERT INTO `cidades` VALUES (8356,'Grao Para',4206108,'SC',42,-28.1847,-49.2144);
+INSERT INTO `cidades` VALUES (8357,'Grapia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8358,'Gravatal',4206207,'SC',42,-28.3311,-49.0352);
+INSERT INTO `cidades` VALUES (8359,'Guabiruba',4206306,'SC',42,-27.0858,-48.9811);
+INSERT INTO `cidades` VALUES (8360,'Guaporanga',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8361,'Guaraciaba',4206405,'SC',42,-26.5991,-53.5177);
+INSERT INTO `cidades` VALUES (8362,'Guaramirim',4206504,'SC',42,-26.473,-49.0025);
+INSERT INTO `cidades` VALUES (8363,'Guaruja do Sul',4206603,'SC',42,-26.3852,-53.5277);
+INSERT INTO `cidades` VALUES (8364,'Guata',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8365,'Guatambu',4206652,'SC',42,-27.1319,-52.7872);
+INSERT INTO `cidades` VALUES (8366,'Hercilio Luz',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8367,'Herciliopolis',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8368,'Herval Doeste',4206702,'SC',42,-27.19361,-51.49472);
+INSERT INTO `cidades` VALUES (8369,'Ibiam',4206751,'SC',42,-27.1814,-51.2369);
+INSERT INTO `cidades` VALUES (8370,'Ibicare',4206801,'SC',42,-27.0916,-51.365);
+INSERT INTO `cidades` VALUES (8371,'Ibicui',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8372,'Ibirama',4206900,'SC',42,-27.0566,-49.5175);
+INSERT INTO `cidades` VALUES (8373,'Icara',4207007,'SC',42,-28.713,-49.2997);
+INSERT INTO `cidades` VALUES (8374,'Ilhota',4207106,'SC',42,-26.8994,-48.8269);
+INSERT INTO `cidades` VALUES (8375,'Imarui',4207205,'SC',42,-28.3411,-48.8197);
+INSERT INTO `cidades` VALUES (8376,'Imbituba',4207304,'SC',42,-28.2397,-48.67);
+INSERT INTO `cidades` VALUES (8377,'Imbuia',4207403,'SC',42,-27.4927,-49.4238);
+INSERT INTO `cidades` VALUES (8378,'Indaial',4207502,'SC',42,-26.8975,-49.2313);
+INSERT INTO `cidades` VALUES (8379,'Indios',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8380,'Ingleses do Rio Vermelho',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8381,'Invernada',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8382,'Iomere',4207577,'SC',42,-27.0042,-51.2422);
+INSERT INTO `cidades` VALUES (8383,'Ipira',4207601,'SC',42,-27.40361,-51.77306);
+INSERT INTO `cidades` VALUES (8384,'Ipomeia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8385,'Ipora do Oeste',4207650,'SC',42,-26.9883,-53.5353);
+INSERT INTO `cidades` VALUES (8386,'Ipuacu',4207684,'SC',42,-26.63139,-52.455);
+INSERT INTO `cidades` VALUES (8387,'Ipumirim',4207700,'SC',42,-27.0767,-52.1356);
+INSERT INTO `cidades` VALUES (8388,'Iraceminha',4207759,'SC',42,-26.8225,-53.27444);
+INSERT INTO `cidades` VALUES (8389,'Irakitan',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8390,'Irani',4207809,'SC',42,-27.0247,-51.9017);
+INSERT INTO `cidades` VALUES (8391,'Iraputa',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8392,'Irati',4207858,'SC',42,-26.65639,-52.89222);
+INSERT INTO `cidades` VALUES (8393,'Irineopolis',4207908,'SC',42,-26.2386,-50.7997);
+INSERT INTO `cidades` VALUES (8394,'Ita',4208005,'SC',42,-27.29056,-52.32306);
+INSERT INTO `cidades` VALUES (8395,'Itaio',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8396,'Itaiopolis',4208104,'SC',42,-26.3364,-49.9064);
+INSERT INTO `cidades` VALUES (8397,'Itajai',4208203,'SC',42,-26.9077,-48.6619);
+INSERT INTO `cidades` VALUES (8398,'Itajuba',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8399,'Itapema',4208302,'SC',42,-27.0903,-48.6114);
+INSERT INTO `cidades` VALUES (8400,'Itapiranga',4208401,'SC',42,-27.1691,-53.7122);
+INSERT INTO `cidades` VALUES (8401,'Itapoa',4208450,'SC',42,-26.1166,-48.6161);
+INSERT INTO `cidades` VALUES (8402,'Itapocu',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8403,'Itoupava',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8404,'Ituporanga',4208500,'SC',42,-27.4141,-49.6011);
+INSERT INTO `cidades` VALUES (8405,'Jabora',4208609,'SC',42,-27.1755,-51.7336);
+INSERT INTO `cidades` VALUES (8406,'Jacinto Machado',4208708,'SC',42,-28.9975,-49.7636);
+INSERT INTO `cidades` VALUES (8407,'Jaguaruna',4208807,'SC',42,-28.6147,-49.0252);
+INSERT INTO `cidades` VALUES (8408,'Jaragua do Sul',4208906,'SC',42,-26.4858,-49.0663);
+INSERT INTO `cidades` VALUES (8409,'Jardinopolis',4208955,'SC',42,-26.7217,-52.8597);
+INSERT INTO `cidades` VALUES (8410,'Joacaba',4209003,'SC',42,-27.178,-51.5047);
+INSERT INTO `cidades` VALUES (8411,'Joinville',4209102,'SC',42,-26.3041,-48.8452);
+INSERT INTO `cidades` VALUES (8412,'Jose Boiteux',4209151,'SC',42,-26.958,-49.628);
+INSERT INTO `cidades` VALUES (8413,'Jupia',4209177,'SC',42,-26.398,-52.7277);
+INSERT INTO `cidades` VALUES (8414,'Lacerdopolis',4209201,'SC',42,-27.26,-51.5555);
+INSERT INTO `cidades` VALUES (8415,'Lages',4209300,'SC',42,-27.8158,-50.3258);
+INSERT INTO `cidades` VALUES (8416,'Lagoa',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8417,'Lagoa da Estiva',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8418,'Laguna',4209409,'SC',42,-28.4825,-48.7808);
+INSERT INTO `cidades` VALUES (8419,'Lajeado Grande',4209458,'SC',42,-26.8575,-52.5669);
+INSERT INTO `cidades` VALUES (8420,'Laurentino',4209508,'SC',42,-27.2166,-49.7327);
+INSERT INTO `cidades` VALUES (8421,'Lauro Muller',4209607,'SC',42,-28.3927,-49.3966);
+INSERT INTO `cidades` VALUES (8422,'Leao',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8423,'Lebon Regis',4209706,'SC',42,-26.9289,-50.6953);
+INSERT INTO `cidades` VALUES (8424,'Leoberto Leal',4209805,'SC',42,-27.50694,-49.28694);
+INSERT INTO `cidades` VALUES (8425,'Lindoia do Sul',4209854,'SC',42,-27.05313,-52.08389);
+INSERT INTO `cidades` VALUES (8426,'Linha das Palmeiras',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8427,'Lontras',4209904,'SC',42,-27.1658,-49.5416);
+INSERT INTO `cidades` VALUES (8428,'Lourdes',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8429,'Luiz Alves',4210001,'SC',42,-26.7206,-48.9328);
+INSERT INTO `cidades` VALUES (8430,'Luzerna',4210035,'SC',42,-27.13278,-51.46722);
+INSERT INTO `cidades` VALUES (8431,'Machados',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8432,'Macieira',4210050,'SC',42,-26.8556,-51.3781);
+INSERT INTO `cidades` VALUES (8433,'Mafra',4210100,'SC',42,-26.1113,-49.8052);
+INSERT INTO `cidades` VALUES (8434,'Major Gercino',4210209,'SC',42,-27.4181,-48.9514);
+INSERT INTO `cidades` VALUES (8435,'Major Vieira',4210308,'SC',42,-26.36778,-50.32806);
+INSERT INTO `cidades` VALUES (8436,'Maracaja',4210407,'SC',42,-28.8467,-49.4528);
+INSERT INTO `cidades` VALUES (8437,'Marari',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8438,'Marata',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8439,'Maravilha',4210506,'SC',42,-26.76083,-53.1725);
+INSERT INTO `cidades` VALUES (8440,'Marcilio Dias',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8441,'Marechal Bormann',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8442,'Marema',4210555,'SC',42,-26.8019,-52.6252);
+INSERT INTO `cidades` VALUES (8443,'Mariflor',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8444,'Marombas',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8445,'Marombas Bossardi',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8446,'Massaranduba',4210605,'SC',42,-26.6105,-49.008);
+INSERT INTO `cidades` VALUES (8447,'Matos Costa',4210704,'SC',42,-26.47306,-51.14833);
+INSERT INTO `cidades` VALUES (8448,'Meleiro',4210803,'SC',42,-28.82861,-49.63583);
+INSERT INTO `cidades` VALUES (8449,'Mirador',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8450,'Mirim',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8451,'Mirim Doce',4210852,'SC',42,-27.19639,-50.07667);
+INSERT INTO `cidades` VALUES (8452,'Modelo',4210902,'SC',42,-26.77833,-53.05528);
+INSERT INTO `cidades` VALUES (8453,'Mondai',4211009,'SC',42,-27.10139,-53.40111);
+INSERT INTO `cidades` VALUES (8454,'Monte Alegre',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8455,'Monte Carlo',4211058,'SC',42,-27.22278,-50.97972);
+INSERT INTO `cidades` VALUES (8456,'Monte Castelo',4211108,'SC',42,-26.4619,-50.2308);
+INSERT INTO `cidades` VALUES (8457,'Morro Chato',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8458,'Morro da Fumaca',4211207,'SC',42,-28.6505,-49.2097);
+INSERT INTO `cidades` VALUES (8459,'Morro do Meio',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8460,'Morro Grande',4211256,'SC',42,-28.8005,-49.7205);
+INSERT INTO `cidades` VALUES (8461,'Navegantes',4211306,'SC',42,-26.8988,-48.6541);
+INSERT INTO `cidades` VALUES (8462,'Nossa Senhora de Caravaggio',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8463,'Nova Cultura',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8464,'Nova Erechim',4211405,'SC',42,-26.9025,-52.9058);
+INSERT INTO `cidades` VALUES (8465,'Nova Guarita',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8466,'Nova Itaberaba',4211454,'SC',42,-26.93972,-52.81222);
+INSERT INTO `cidades` VALUES (8467,'Nova Petropolis',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8468,'Nova Teutonia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8469,'Nova Trento',4211504,'SC',42,-27.2858,-48.9294);
+INSERT INTO `cidades` VALUES (8470,'Nova Veneza',4211603,'SC',42,-28.6366,-49.4975);
+INSERT INTO `cidades` VALUES (8471,'Novo Horizonte',4211652,'SC',42,-26.4444,-52.8333);
+INSERT INTO `cidades` VALUES (8472,'Orleans',4211702,'SC',42,-28.35889,-49.29139);
+INSERT INTO `cidades` VALUES (8473,'Otacilio Costa',4211751,'SC',42,-27.49306,-50.11972);
+INSERT INTO `cidades` VALUES (8474,'Ouro',4211801,'SC',42,-27.33278,-51.61667);
+INSERT INTO `cidades` VALUES (8475,'Ouro Verde',4211850,'SC',42,-26.69444,-52.31194);
+INSERT INTO `cidades` VALUES (8476,'Paial',4211876,'SC',42,-27.25222,-52.49806);
+INSERT INTO `cidades` VALUES (8477,'Painel',4211892,'SC',42,-27.92889,-50.105);
+INSERT INTO `cidades` VALUES (8478,'Palhoca',4211900,'SC',42,-27.6452,-48.6677);
+INSERT INTO `cidades` VALUES (8479,'Palma Sola',4212007,'SC',42,-26.3475,-53.27833);
+INSERT INTO `cidades` VALUES (8480,'Palmeira',4212056,'SC',42,-27.58278,-50.15944);
+INSERT INTO `cidades` VALUES (8481,'Palmitos',4212106,'SC',42,-27.07361,-53.15361);
+INSERT INTO `cidades` VALUES (8482,'Pantano do Sul',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8483,'Papanduva',4212205,'SC',42,-26.37028,-50.14444);
+INSERT INTO `cidades` VALUES (8484,'Paraiso',4212239,'SC',42,-26.62389,-53.67345);
+INSERT INTO `cidades` VALUES (8485,'Passo de Torres',4212254,'SC',42,-29.335,-49.72278);
+INSERT INTO `cidades` VALUES (8486,'Passo Manso',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8487,'Passos Maia',4212270,'SC',42,-26.78,-52.05944);
+INSERT INTO `cidades` VALUES (8488,'Paula Pereira',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8489,'Paulo Lopes',4212304,'SC',42,-27.96167,-48.68361);
+INSERT INTO `cidades` VALUES (8490,'Pedras Grandes',4212403,'SC',42,-28.43583,-49.185);
+INSERT INTO `cidades` VALUES (8491,'Penha',4212502,'SC',42,-26.76944,-48.64583);
+INSERT INTO `cidades` VALUES (8492,'Perico',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8493,'Peritiba',4212601,'SC',42,-27.373,-51.9036);
+INSERT INTO `cidades` VALUES (8494,'Pescaria Brava',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8495,'Petrolandia',4212700,'SC',42,-27.53528,-49.69806);
+INSERT INTO `cidades` VALUES (8496,'Picarras',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8497,'Pindotiba',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8498,'Pinhalzinho',4212908,'SC',42,-26.848,-52.9916);
+INSERT INTO `cidades` VALUES (8499,'Pinheiral',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8500,'Pinheiro Preto',4213005,'SC',42,-27.04667,-51.21);
+INSERT INTO `cidades` VALUES (8501,'Pinheiros',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8502,'Pirabeiraba',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8503,'Piratuba',4213104,'SC',42,-27.4194,-51.7716);
+INSERT INTO `cidades` VALUES (8504,'Planalto',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8505,'Planalto Alegre',4213153,'SC',42,-27.07028,-52.86556);
+INSERT INTO `cidades` VALUES (8506,'Poco Preto',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8507,'Pomerode',4213203,'SC',42,-26.7405,-49.1769);
+INSERT INTO `cidades` VALUES (8508,'Ponte Alta',4213302,'SC',42,-27.4841,-50.38);
+INSERT INTO `cidades` VALUES (8509,'Ponte Alta do Norte',4213351,'SC',42,-27.15833,-50.46444);
+INSERT INTO `cidades` VALUES (8510,'Ponte Serrada',4213401,'SC',42,-26.87167,-52.01583);
+INSERT INTO `cidades` VALUES (8511,'Porto Belo',4213500,'SC',42,-27.15778,-48.55306);
+INSERT INTO `cidades` VALUES (8512,'Porto Uniao',4213609,'SC',42,-26.238,-51.0783);
+INSERT INTO `cidades` VALUES (8513,'Pouso Redondo',4213708,'SC',42,-27.258,-49.9336);
+INSERT INTO `cidades` VALUES (8514,'Praia Grande',4213807,'SC',42,-29.1966,-49.95);
+INSERT INTO `cidades` VALUES (8515,'Prata',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8516,'Presidente Castelo Branco',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8517,'Presidente Getulio',4214003,'SC',42,-27.05056,-49.62278);
+INSERT INTO `cidades` VALUES (8518,'Presidente Juscelino',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8519,'Presidente Kennedy',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8520,'Presidente Nereu',4214102,'SC',42,-27.27722,-49.39028);
+INSERT INTO `cidades` VALUES (8521,'Princesa',4214151,'SC',42,-26.44194,-53.59833);
+INSERT INTO `cidades` VALUES (8522,'Quarta Linha',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8523,'Quilombo',4214201,'SC',42,-26.72611,-52.72056);
+INSERT INTO `cidades` VALUES (8524,'Quilometro Doze',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8525,'Rancho Queimado',4214300,'SC',42,-27.6725,-49.02167);
+INSERT INTO `cidades` VALUES (8526,'Ratones',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8527,'Residencia Fuck',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8528,'Ribeirao da Ilha',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8529,'Ribeirao Pequeno',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8530,'Rio Antinha',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8531,'Rio Bonito',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8532,'Rio da Anta',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8533,'Rio da Luz',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8534,'Rio das Antas',4214409,'SC',42,-26.8983,-51.0741);
+INSERT INTO `cidades` VALUES (8535,'Rio das Furnas',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8536,'Rio do Campo',4214508,'SC',42,-26.94889,-50.14139);
+INSERT INTO `cidades` VALUES (8537,'Rio do Oeste',4214607,'SC',42,-27.1785,-49.8232);
+INSERT INTO `cidades` VALUES (8538,'Rio do Sul',4214805,'SC',42,-27.2141,-49.643);
+INSERT INTO `cidades` VALUES (8539,'Rio dos Bugres',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8540,'Rio dos Cedros',4214706,'SC',42,-26.73833,-49.27417);
+INSERT INTO `cidades` VALUES (8541,'Rio Duna',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8542,'Rio Fortuna',4214904,'SC',42,-28.13111,-49.10528);
+INSERT INTO `cidades` VALUES (8543,'Rio Maina',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8544,'Rio Negrinho',4215000,'SC',42,-26.25444,-49.51833);
+INSERT INTO `cidades` VALUES (8545,'Rio Preto do Sul',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8546,'Rio Rufino',4215059,'SC',42,-27.86056,-49.77917);
+INSERT INTO `cidades` VALUES (8547,'Riqueza',4215075,'SC',42,-27.06972,-53.32472);
+INSERT INTO `cidades` VALUES (8548,'Rodeio',4215109,'SC',42,-26.92278,-49.36639);
+INSERT INTO `cidades` VALUES (8549,'Romelandia',4215208,'SC',42,-26.67611,-53.31444);
+INSERT INTO `cidades` VALUES (8550,'Sai',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8551,'Salete',4215307,'SC',42,-26.98,-49.99972);
+INSERT INTO `cidades` VALUES (8552,'Saltinho',4215356,'SC',42,-26.60917,-53.05611);
+INSERT INTO `cidades` VALUES (8553,'Salto Veloso',4215406,'SC',42,-26.90528,-51.40639);
+INSERT INTO `cidades` VALUES (8554,'Sanga da Toca',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8555,'Sangao',4215455,'SC',42,-28.63778,-49.12917);
+INSERT INTO `cidades` VALUES (8556,'Santa Cecilia',4215505,'SC',42,-26.9605,-50.4269);
+INSERT INTO `cidades` VALUES (8557,'Santa Cruz do Timbo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8558,'Santa Helena',4215554,'SC',42,-26.9375,-53.6191);
+INSERT INTO `cidades` VALUES (8559,'Santa Izabel',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8560,'Santa Lucia',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8561,'Santa Maria',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8562,'Santa Rosa de Lima',4215604,'SC',42,-28.03917,-49.12778);
+INSERT INTO `cidades` VALUES (8563,'Santa Rosa do Sul',4215653,'SC',42,-29.13611,-49.7);
+INSERT INTO `cidades` VALUES (8564,'Santa Terezinha',4215679,'SC',42,-26.77861,-50.00806);
+INSERT INTO `cidades` VALUES (8565,'Santa Terezinha do Progresso',4215687,'SC',42,-26.61889,-53.20167);
+INSERT INTO `cidades` VALUES (8566,'Santa Terezinha do Salto',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8567,'Santiago do Sul',4215695,'SC',42,-26.63944,-52.68472);
+INSERT INTO `cidades` VALUES (8568,'Santo Amaro da Imperatriz',4215703,'SC',42,-27.68806,-48.77861);
+INSERT INTO `cidades` VALUES (8569,'Santo Antonio de Lisboa',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8570,'Sao Bento Baixo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8571,'Sao Bento do Sul',4215802,'SC',42,-26.2502,-49.3786);
+INSERT INTO `cidades` VALUES (8572,'Sao Bernardino',4215752,'SC',42,-26.47,-52.96444);
+INSERT INTO `cidades` VALUES (8573,'Sao Bonifacio',4215901,'SC',42,-27.9011,-48.9288);
+INSERT INTO `cidades` VALUES (8574,'Sao Carlos',4216008,'SC',42,-27.0772,-53.0036);
+INSERT INTO `cidades` VALUES (8575,'Sao Cristovao',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8576,'Sao Cristovao do Sul',4216057,'SC',42,-27.2663,-50.4405);
+INSERT INTO `cidades` VALUES (8577,'Sao Defende',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8578,'Sao Domingos',4216107,'SC',42,-26.558,-52.5313);
+INSERT INTO `cidades` VALUES (8579,'Sao Francisco do Sul',4216206,'SC',42,-26.2433,-48.6377);
+INSERT INTO `cidades` VALUES (8580,'Sao Gabriel',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8581,'Sao Joao Batista',4216305,'SC',42,-27.27611,-48.84944);
+INSERT INTO `cidades` VALUES (8582,'Sao Joao do Itaperiu',4216354,'SC',42,-26.61778,-48.76806);
+INSERT INTO `cidades` VALUES (8583,'Sao Joao do Oeste',4216255,'SC',42,-27.09806,-53.59389);
+INSERT INTO `cidades` VALUES (8584,'Sao Joao do Rio Vermelho',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8585,'Sao Joao do Sul',4216404,'SC',42,-29.22333,-49.81);
+INSERT INTO `cidades` VALUES (8586,'Sao Joaquim',4216503,'SC',42,-28.2936,-49.9316);
+INSERT INTO `cidades` VALUES (8587,'Sao Jose',4216602,'SC',42,-27.6152,-48.6272);
+INSERT INTO `cidades` VALUES (8588,'Sao Jose do Cedro',4216701,'SC',42,-26.4547,-53.4941);
+INSERT INTO `cidades` VALUES (8589,'Sao Jose do Cerrito',4216800,'SC',42,-27.66306,-50.58);
+INSERT INTO `cidades` VALUES (8590,'Sao Jose do Laranjal',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8591,'Sao Leonardo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8592,'Sao Lourenco do Oeste',4216909,'SC',42,-26.35917,-52.85111);
+INSERT INTO `cidades` VALUES (8593,'Sao Ludgero',4217006,'SC',42,-28.3255,-49.1763);
+INSERT INTO `cidades` VALUES (8594,'Sao Martinho',4217105,'SC',42,-28.1647,-48.9791);
+INSERT INTO `cidades` VALUES (8595,'Sao Miguel da Boa Vista',4217154,'SC',42,-26.69028,-53.25139);
+INSERT INTO `cidades` VALUES (8596,'Sao Miguel da Serra',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8597,'Sao Miguel do Oeste',4217204,'SC',42,-26.7264,-53.5178);
+INSERT INTO `cidades` VALUES (8598,'Sao Pedro de Alcantara',4217253,'SC',42,-27.5658,-48.8052);
+INSERT INTO `cidades` VALUES (8599,'Sao Pedro Tobias',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8600,'Sao Roque',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8601,'Sao Sebastiao do Arvoredo',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8602,'Sao Sebastiao do Sul',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8603,'Sapiranga',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8604,'Saudades',4217303,'SC',42,-26.92417,-53.00306);
+INSERT INTO `cidades` VALUES (8605,'Schroeder',4217402,'SC',42,-26.4125,-49.07306);
+INSERT INTO `cidades` VALUES (8606,'Seara',4217501,'SC',42,-27.15111,-52.31);
+INSERT INTO `cidades` VALUES (8607,'Sede Oldemburg',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8608,'Serra Alta',4217550,'SC',42,-26.7291,-53.0419);
+INSERT INTO `cidades` VALUES (8609,'Sertao do Maruim',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8610,'Sideropolis',4217600,'SC',42,-28.5977,-49.4241);
+INSERT INTO `cidades` VALUES (8611,'Sombrio',4217709,'SC',42,-29.11389,-49.61667);
+INSERT INTO `cidades` VALUES (8612,'Sorocaba do Sul',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8613,'Sul Brasil',4217758,'SC',42,-26.73611,-52.96472);
+INSERT INTO `cidades` VALUES (8614,'Taio',4217808,'SC',42,-27.11639,-49.99806);
+INSERT INTO `cidades` VALUES (8615,'Tangara',4217907,'SC',42,-27.1044,-51.2472);
+INSERT INTO `cidades` VALUES (8616,'Taquara Verde',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8617,'Taquaras',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8618,'Tigipio',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8619,'Tigrinhos',4217956,'SC',42,-26.68778,-53.15806);
+INSERT INTO `cidades` VALUES (8620,'Tijucas',4218004,'SC',42,-27.24139,-48.63361);
+INSERT INTO `cidades` VALUES (8621,'Timbe do Sul',4218103,'SC',42,-28.8302,-49.8469);
+INSERT INTO `cidades` VALUES (8622,'Timbo',4218202,'SC',42,-26.8233,-49.2716);
+INSERT INTO `cidades` VALUES (8623,'Timbo Grande',4218251,'SC',42,-26.615,-50.67417);
+INSERT INTO `cidades` VALUES (8624,'Tres Barras',4218301,'SC',42,-26.10639,-50.32222);
+INSERT INTO `cidades` VALUES (8625,'Treviso',4218350,'SC',42,-28.5155,-49.4575);
+INSERT INTO `cidades` VALUES (8626,'Treze de Maio',4218400,'SC',42,-28.55889,-49.14778);
+INSERT INTO `cidades` VALUES (8627,'Treze Tilias',4218509,'SC',42,-27.00167,-51.40639);
+INSERT INTO `cidades` VALUES (8628,'Trombudo Central',4218608,'SC',42,-27.29917,-49.79028);
+INSERT INTO `cidades` VALUES (8629,'Tubarao',4218707,'SC',42,-28.4666,-49.0066);
+INSERT INTO `cidades` VALUES (8630,'Tunapolis',4218756,'SC',42,-26.96889,-53.63917);
+INSERT INTO `cidades` VALUES (8631,'Tupitinga',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8632,'Turvo',4218806,'SC',42,-28.9261,-49.6788);
+INSERT INTO `cidades` VALUES (8633,'Uniao do Oeste',4218855,'SC',42,-26.7608,-52.8552);
+INSERT INTO `cidades` VALUES (8634,'Urubici',4218905,'SC',42,-28.015,-49.59167);
+INSERT INTO `cidades` VALUES (8635,'Uruguai',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8636,'Urupema',4218954,'SC',42,-27.95278,-49.87306);
+INSERT INTO `cidades` VALUES (8637,'Urussanga',4219002,'SC',42,-28.5177,-49.3205);
+INSERT INTO `cidades` VALUES (8638,'Vargeao',4219101,'SC',42,-26.8636,-52.1547);
+INSERT INTO `cidades` VALUES (8639,'Vargem',4219150,'SC',42,-27.4888,-50.9747);
+INSERT INTO `cidades` VALUES (8640,'Vargem Bonita',4219176,'SC',42,-27.0063,-51.74);
+INSERT INTO `cidades` VALUES (8641,'Vargem do Cedro',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8642,'Vidal Ramos',4219200,'SC',42,-27.39194,-49.35583);
+INSERT INTO `cidades` VALUES (8643,'Videira',4219309,'SC',42,-27.008,-51.1513);
+INSERT INTO `cidades` VALUES (8644,'Vila Conceicao',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8645,'Vila de Volta Grande',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8646,'Vila Milani',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8647,'Vila Nova',0,'SC',0,NULL,NULL);
+INSERT INTO `cidades` VALUES (8648,'Vitor Meireles',4219358,'SC',42,-26.8805,-49.8325);
+INSERT INTO `cidades` VALUES (8649,'Witmarsum',4219408,'SC',42,-26.92611,-49.79583);
+INSERT INTO `cidades` VALUES (8650,'Xanxere',4219507,'SC',42,-26.8766,-52.4041);
+INSERT INTO `cidades` VALUES (8651,'Xavantina',4219606,'SC',42,-27.0686,-52.3419);
+INSERT INTO `cidades` VALUES (8652,'Xaxim',4219705,'SC',42,-26.9613,-52.5344);
+INSERT INTO `cidades` VALUES (8653,'Zortea',4219853,'SC',42,-27.45139,-51.55528);
+INSERT INTO `cidades` VALUES (9857,'NETSOFT DO SUL',429999,'SC',42,0,0);
+INSERT INTO `cidades` VALUES (9859,'FISCAL DO SUL',4211222,'SC',42,0,0);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `clientes` (
+  `cd_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_cliente` varchar(100) DEFAULT NULL,
+  `ds_fone` varchar(50) DEFAULT NULL,
+  `ds_cidade` varchar(50) DEFAULT NULL,
+  `ds_email` varchar(100) DEFAULT NULL,
+  `ds_cpf` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`cd_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `clientes` VALUES (1,'maria pitanga','fofofo1','cidid1','maria@ggg.com','13461243636');
+INSERT INTO `clientes` VALUES (2,'clientee de teste','fone22222','cocnordia','teste@hotmail.com','34563464365');
+INSERT INTO `clientes` VALUES (3,'chico da sailva','r650','5805807','chico@gmail.com','14361243561');
+
+CREATE TABLE `contatos` (
+  `cd_contato` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`cd_contato`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `contatos` VALUES (25,'Ana','ana@dominio.com');
+INSERT INTO `contatos` VALUES (26,'Maria','maria@dominio.com');
+INSERT INTO `contatos` VALUES (27,'Pedro','pedro@dominio.com');
+
+CREATE TABLE `importacoes` (
+  `cd_importacao` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_importacao` datetime DEFAULT NULL,
+  `nr_registros` int(11) DEFAULT 0,
+  `ds_usuario` varchar(30) COLLATE utf8_unicode_ci DEFAULT '.',
+  `ds_qual` varchar(20) COLLATE utf8_unicode_ci DEFAULT '.',
+  `ds_resultado` varchar(20000) COLLATE utf8_unicode_ci DEFAULT '.',
+  `nr_total` int(11) DEFAULT 0,
+  `nr_insert` int(11) DEFAULT 0,
+  `nr_update` int(11) DEFAULT 0,
+  `nr_erro` int(11) DEFAULT 0,
+  `ds_formato` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`cd_importacao`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*!40101 SET NAMES utf8 */;
+INSERT INTO `importacoes` VALUES (1,'2020-10-21 19:20:11',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (2,'2020-10-21 19:21:19',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (3,'2020-10-23 09:38:22',7,'Adm Testes','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (4,'2020-10-23 09:41:24',2,'Adm Testes','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (5,'2020-10-23 09:50:25',9,'Adm Testes','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (6,'2020-10-28 10:40:38',9,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (7,'2020-10-28 12:00:18',6,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (8,'2020-10-28 12:01:43',9,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (9,'2020-10-28 12:02:26',9,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (10,'2020-10-28 12:02:35',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (11,'2020-10-28 12:04:02',4,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (12,'2020-10-28 12:05:07',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (13,'2020-10-28 12:06:45',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (14,'2020-10-28 12:07:44',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (15,'2020-10-28 12:09:42',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (16,'2020-10-28 12:11:20',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (17,'2020-10-28 12:12:10',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (18,'2020-10-28 13:06:21',9,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (19,'2020-11-24 14:08:09',2,'Max Pezzin','Cadastros','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (20,'2020-11-24 14:13:30',9,'Max Pezzin','Materiais','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (21,'2020-11-24 18:47:38',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (22,'2020-11-24 18:48:10',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (23,'2020-11-24 20:51:48',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (24,'2020-11-24 21:13:09',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (25,'2020-11-24 21:15:23',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (26,'2020-11-24 21:28:13',14,'Max Pezzin','pedidos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (27,'2020-12-14 19:05:23',14,'Max Pezzin','Orcamentos','.',0,0,0,0,NULL);
+INSERT INTO `importacoes` VALUES (85,'2025-05-13 18:57:45',3,'Importou','produtos','ERRO  \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (86,'2025-05-13 18:59:12',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (87,'2025-05-13 18:59:38',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (88,'2025-05-13 19:00:46',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (89,'2025-05-13 19:01:29',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (90,'2025-05-13 19:03:43',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (91,'2025-05-13 19:04:44',3,'Importou','produtos','ERRO 22 \nERRO Martelo \nERRO PRegos \n',3,0,0,3,NULL);
+INSERT INTO `importacoes` VALUES (92,'2025-05-13 19:06:49',3,'Importou','produtos','IN 22 \nIN 33 \nIN 44 \n',3,3,0,0,NULL);
+INSERT INTO `importacoes` VALUES (93,'2025-05-13 19:07:47',3,'Importou','produtos','AT 22 \nAT 33 \nAT 44 \n',3,0,3,0,NULL);
+INSERT INTO `importacoes` VALUES (94,'2025-05-13 19:08:07',3,'Importou','produtos','AT 22 \nAT 33 \nAT 44 \n',3,0,3,0,NULL);
+INSERT INTO `importacoes` VALUES (95,'2025-05-13 19:42:25',3,'Importou','produtos','IN 212 \nIN 323 \nIN 434 \n',3,3,0,0,NULL);
+INSERT INTO `importacoes` VALUES (96,'2025-05-13 19:46:19',3,'Importou','produtos','AT 212 \nAT 323 \nAT 434 \n',3,0,3,0,NULL);
+INSERT INTO `importacoes` VALUES (97,'2025-05-13 19:47:23',3,'Importou','produtos','IN 9212 \nIN 9323 \nIN 9434 \n',3,3,0,0,NULL);
+INSERT INTO `importacoes` VALUES (98,'2025-05-13 20:28:16',3,'Importou','produtos','IN 92 \nIN 93 \nIN 94 \n',3,3,0,0,NULL);
+INSERT INTO `importacoes` VALUES (99,'2025-05-13 20:29:45',3,'Importou','produtos','AT 92 \nAT 93 \nAT 94 \n',3,0,3,0,NULL);
+INSERT INTO `importacoes` VALUES (100,'2025-05-13 20:30:55',3,'Importou','produtos','AT 92 \nAT 93 \nAT 94 \n',3,0,3,0,NULL);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `ip_bloqueado` (
+  `cd_ip` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_ip` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`cd_ip`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `ip_bloqueado` VALUES (1,'192.168.0.111');
+INSERT INTO `ip_bloqueado` VALUES (2,'192.168.0.100');
+
+CREATE TABLE `ip_liberado` (
+  `cd_ip` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_ip` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`cd_ip`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `ip_liberado` VALUES (1,'192.168.0.112');
+INSERT INTO `ip_liberado` VALUES (2,'192.168.0.107');
+
+CREATE TABLE `orcamentos` (
+  `cd_orcamento` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_orcamento` date NOT NULL,
+  `cd_cliente_orcamento` int(6) NOT NULL DEFAULT 0,
+  `cd_usuario_orcamento` int(6) NOT NULL DEFAULT 0,
+  `vl_valor` float(8,2) NOT NULL DEFAULT 0.00,
+  `ds_obs` varchar(200) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`cd_orcamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `orcamentos` VALUES (1,'2022-10-27',3,3,7539.77,'tudo blz');
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `orcamento_itens` (
+  `cd_oi` int(11) NOT NULL AUTO_INCREMENT,
+  `cd_orcamento_oi` int(11) DEFAULT 0,
+  `cd_produto_oi` int(11) DEFAULT 0,
+  `ds_unidade` varchar(5) COLLATE latin1_general_ci DEFAULT NULL,
+  `vl_quantidade` float(8,2) DEFAULT 0.00,
+  `vl_unitario` float(8,2) DEFAULT 0.00,
+  PRIMARY KEY (`cd_oi`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `orcamento_itens` VALUES (55,1,5,NULL,1,544);
+INSERT INTO `orcamento_itens` VALUES (61,1,2,NULL,13.45,421.99);
+INSERT INTO `orcamento_itens` VALUES (64,1,1,NULL,110,12);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `produtos` (
+  `cd_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `cd_codigo` int(11) DEFAULT 0,
+  `ds_produto` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `vl_estoque` int(11) NOT NULL DEFAULT 0,
+  `ds_cor` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `ds_categoria` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `ds_unidade` varchar(5) COLLATE latin1_general_ci DEFAULT NULL,
+  `vl_custo` float(9,2) DEFAULT 0.00,
+  `vl_venda` float(8,2) DEFAULT 0.00,
+  `dt_produto` date DEFAULT NULL,
+  `ds_origem` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  PRIMARY KEY (`cd_produto`)
+) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `produtos` VALUES (1,33,'batata',0,'branco','','33',3,6,'2025-04-01',NULL);
+INSERT INTO `produtos` VALUES (2,44,'uva',0,'preto','','44',4,6,'2025-04-01',NULL);
+INSERT INTO `produtos` VALUES (5,77,'cerveja',0,'verde','','23',4,6,'2025-04-01',NULL);
+INSERT INTO `produtos` VALUES (11,0,'cimento',0,'cinza','',NULL,45,0,NULL,NULL);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `produtos2` (
+  `cd_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `cd_codigo` varchar(20) COLLATE utf8_unicode_ci DEFAULT '0',
+  `ds_produto` varchar(50) COLLATE utf8_unicode_ci DEFAULT '0',
+  `qt_estoque` float(8,2) DEFAULT 0.00,
+  `qt_minima` float(8,2) DEFAULT 0.00,
+  `ds_cor` varchar(50) COLLATE utf8_unicode_ci DEFAULT '.',
+  `ds_unidade` varchar(5) COLLATE utf8_unicode_ci DEFAULT 'un',
+  `ds_obs_produto` varchar(500) COLLATE utf8_unicode_ci DEFAULT '.',
+  `ds_produto_atualizado` varchar(50) COLLATE utf8_unicode_ci DEFAULT '.',
+  `dt_produto_atualizado` datetime DEFAULT NULL,
+  `ds_local_estoque` varchar(100) COLLATE utf8_unicode_ci DEFAULT '.',
+  `ds_categoria` varchar(50) COLLATE utf8_unicode_ci DEFAULT '.',
+  `vl_unitario` float(9,2) DEFAULT 0.00,
+  `ds_situacao` varchar(11) COLLATE utf8_unicode_ci DEFAULT 'Ativa',
+  PRIMARY KEY (`cd_produto`),
+  KEY `cd_codigo` (`cd_codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*!40101 SET NAMES utf8 */;
+INSERT INTO `produtos2` VALUES (84,'22','Tijolo',324,10,'Marron','Un','.','Atualização','2025-05-13 19:08:07','Patio','Materiais',0,'Ativa');
+INSERT INTO `produtos2` VALUES (85,'33','Martelo',31,5,'Un','Armar','.','Atualização','2025-05-13 19:08:07','Ferramentas','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (86,'44','PRegos',391,20,'Sc','Prate','.','Atualização','2025-05-13 19:08:07','Materiais','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (87,'212','Tijolo',324,10,'Marron','Un','.','Atualização','2025-05-13 19:46:19','Patio','Materiais',0,'Ativa');
+INSERT INTO `produtos2` VALUES (88,'323','Martelo',31,5,'Un','Armar','.','Atualização','2025-05-13 19:46:19','Ferramentas','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (89,'434','PRegos',391,20,'Sc','Prate','.','Atualização','2025-05-13 19:46:19','Materiais','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (90,'9212','Tijolo',324,10,'Marron','Un','.','Importação','2025-05-13 19:47:23','Patio','Materiais',0,'Ativa');
+INSERT INTO `produtos2` VALUES (91,'9323','Martelo',31,5,'Un','Armar','.','Importação','2025-05-13 19:47:23','Ferramentas','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (92,'9434','PRegos',391,20,'Sc','Prate','.','Importação','2025-05-13 19:47:23','Materiais','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (93,'92','Tijolo',324,10,'Marron','Un','.','Atualização','2025-05-13 20:30:55','Patio','Materiais',0,'Ativa');
+INSERT INTO `produtos2` VALUES (94,'93','Martelo',31,5,'Un','Armar','.','Atualização','2025-05-13 20:30:55','Ferramentas','',0,'Ativa');
+INSERT INTO `produtos2` VALUES (95,'94','PRegos',391,20,'Sc','Prate','.','Atualização','2025-05-13 20:30:55','Materiais','',0,'Ativa');
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `textos` (
+  `cd_texto` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_texto` varchar(3330) DEFAULT NULL,
+  PRIMARY KEY (`cd_texto`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `textos` VALUES (1,'ljg jkjulkjdl jlgjlk jea h s fdsdh sdh sdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdhjlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh sdh jlgjlk jea h s fdsdh sdh sdh sdh jlgjlk jea h s fdsdh');
+INSERT INTO `textos` VALUES (2,'Rua do comercio ,. 32, Concordia SC');
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `tintas` (
+  `cd_tinta` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_tinta` varchar(100) DEFAULT NULL,
+  `ds_cor` varchar(11) DEFAULT NULL,
+  `ds_tipos` varchar(11) DEFAULT NULL,
+  `vl_compra` float(8,2) DEFAULT NULL,
+  PRIMARY KEY (`cd_tinta`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `tintas` VALUES (1,'azul','4235','oleo',NULL);
+INSERT INTO `tintas` VALUES (2,'roxo','123123','acrilica',NULL);
+INSERT INTO `tintas` VALUES (3,'verde','82457','guacxe',NULL);
+INSERT INTO `tintas` VALUES (4,'preto','43463','madeira',NULL);
+
+CREATE TABLE `user_ws` (
+  `cd_uws` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_nome` varchar(100) DEFAULT NULL,
+  `ds_senha` varchar(10) DEFAULT NULL,
+  `ds_token` varchar(100) DEFAULT NULL,
+  `dt_token` datetime DEFAULT '2001-01-01 00:00:00',
+  `ds_ip` varchar(50) DEFAULT NULL,
+  `ds_cpf` varchar(15) DEFAULT NULL,
+  `nr_acesso` int(11) DEFAULT 0,
+  `dt_acesso` datetime DEFAULT NULL,
+  `ip_atual` varchar(20) DEFAULT NULL,
+  `ds_entidade` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`cd_uws`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `user_ws` VALUES (1,'max','senha','463588618131653642059052362867141693420217605565113769466526','2025-10-24 19:56:40','192.168.0.200',NULL,0,NULL,NULL,NULL);
+INSERT INTO `user_ws` VALUES (2,'max2','senha2',NULL,'2001-01-01 00:00:00',NULL,'11122233344',2,'2025-09-12 20:16:33','::1',NULL);
+INSERT INTO `user_ws` VALUES (3,'arthur','arthur1','50925526','2025-09-12 21:58:26','192.168.0.209','11163141933',15,'2025-09-12 21:06:05','192.168.0.209','PRODUTOS');
+INSERT INTO `user_ws` VALUES (4,'Paulo','123','62611622','2025-09-12 21:51:35','192.168.0.206','08392387970',112,'2025-09-12 21:06:15','192.168.0.206','PRODUTOS');
+INSERT INTO `user_ws` VALUES (5,'Joao','123','41597942','2025-09-12 21:45:00','192.168.0.205','09851544973',12,'2025-09-12 21:06:27','192.168.0.205','PRODUTOS');
+INSERT INTO `user_ws` VALUES (6,'gustavo','batata','23383043','2025-09-12 22:01:28','192.168.0.102','12797850980',92,'2025-09-12 21:06:24','192.168.0.102','PRODUTOS');
+INSERT INTO `user_ws` VALUES (8,'Julioooo','123456789','87617059','2025-09-12 21:45:31','192.168.0.107','11940028922',21271,'2025-09-12 21:06:15','192.168.0.107','PRODUTOS');
+INSERT INTO `user_ws` VALUES (10,'Jackson','123456','21631648','2025-09-12 21:51:35','192.168.0.103','09999714927',1097,'2025-09-12 21:06:53','192.168.0.103','PRODUTOS');
+INSERT INTO `user_ws` VALUES (13,'gustavo','batata','23383043','2025-09-12 22:01:28','192.168.0.102','12797850980',0,NULL,NULL,NULL);
+INSERT INTO `user_ws` VALUES (14,'Paulo','123','62611622','2025-09-12 21:51:35','192.168.0.206','08392387970',0,NULL,NULL,NULL);
+INSERT INTO `user_ws` VALUES (15,'Pick','40028922',NULL,'2001-01-01 00:00:00','192.168.0.107','11940028923',0,NULL,NULL,NULL);
+INSERT INTO `user_ws` VALUES (16,'Gui','123123123','59055416','2025-09-12 22:01:37','192.168.0.210','11241013900',0,NULL,NULL,NULL);
+
+CREATE TABLE `usuarios` (
+  `cd_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `ds_usuario` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `ds_senha` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `ds_email` varchar(50) COLLATE latin1_general_ci DEFAULT NULL,
+  `ds_cor` varchar(50) COLLATE latin1_general_ci DEFAULT 'black',
+  `ds_celular` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `dt_nascimento` date DEFAULT NULL,
+  `ds_cpf` varchar(15) COLLATE latin1_general_ci DEFAULT NULL,
+  `ds_uf` varchar(3) COLLATE latin1_general_ci DEFAULT NULL,
+  `ds_cidade` varchar(50) COLLATE latin1_general_ci DEFAULT NULL,
+  PRIMARY KEY (`cd_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+/*!40101 SET NAMES latin1 */;
+INSERT INTO `usuarios` VALUES (1,'max','max','max@max.com','blue','','0000-00-00','11','MT','Alto Garcas');
+INSERT INTO `usuarios` VALUES (2,'chicoo da silva','1234','chicico9999999ooooo@dom.com.br','black','(99)9 9999-9999','0000-00-00','2223423423455','PB','Areial');
+INSERT INTO `usuarios` VALUES (3,'Marcos da Silva','123','zxvzsadgasgasdgasd@asdkfa.com','black','(34)9 9828-9515','2020-04-12','333 3 3 3 3 3 3','AL','Alecrim');
+INSERT INTO `usuarios` VALUES (4,'dfg','123abc','asdfadfsas!@gmailc.om','black',NULL,NULL,'44',NULL,NULL);
+INSERT INTO `usuarios` VALUES (5,'gerger','aaaa','aaaa@aaaa.com','black','48999999999','2023-05-03','5553453453 4 4 ',NULL,NULL);
+INSERT INTO `usuarios` VALUES (11,'erher','',NULL,'black',NULL,NULL,'111',NULL,NULL);
+INSERT INTO `usuarios` VALUES (13,'joazinho','jojojo','jojo@jojo.com','black',NULL,NULL,'1333',NULL,NULL);
+INSERT INTO `usuarios` VALUES (14,'testes novo usuario','',NULL,'black','33344333',NULL,'1444',NULL,NULL);
+
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `valores` (
+  `nome1` varchar(50) DEFAULT NULL,
+  `nome2` varchar(50) DEFAULT NULL,
+  `nome3` varchar(50) DEFAULT NULL,
+  `nome4` varchar(50) DEFAULT NULL,
+  `nome5` varchar(50) DEFAULT NULL,
+  `nome6` varchar(50) DEFAULT NULL,
+  `valor1` int(11) DEFAULT 0,
+  `valor2` int(11) DEFAULT 0,
+  `valor3` int(11) DEFAULT 0,
+  `valor4` int(11) DEFAULT 0,
+  `valor5` int(11) DEFAULT 0,
+  `valor6` int(11) DEFAULT 0,
+  `acao` varchar(50) DEFAULT NULL,
+  `tipo` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `valores` VALUES ('andre','luiz','maria','pedro','carlos','ana',12,22,33,11,41,141,NULL,'bar');
+
+CREATE TABLE `vendas` (
+  `cd_venda` int(11) NOT NULL AUTO_INCREMENT,
+  `cd_vendedor` int(11) DEFAULT 0,
+  `vl_valor` int(11) DEFAULT 0,
+  PRIMARY KEY (`cd_venda`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
+INSERT INTO `vendas` VALUES (1,1,23);
+INSERT INTO `vendas` VALUES (2,1,23);
+INSERT INTO `vendas` VALUES (3,2,2);
+INSERT INTO `vendas` VALUES (4,44,11);
+INSERT INTO `vendas` VALUES (5,2,5);
+INSERT INTO `vendas` VALUES (6,55,52);
+INSERT INTO `vendas` VALUES (7,33,34);
+INSERT INTO `vendas` VALUES (8,42,6);
+INSERT INTO `vendas` VALUES (9,44,5);
+INSERT INTO `vendas` VALUES (10,3,12);
+INSERT INTO `vendas` VALUES (11,62,6);
+INSERT INTO `vendas` VALUES (12,4,15);
+INSERT INTO `vendas` VALUES (13,22,33);
+INSERT INTO `vendas` VALUES (14,63,1);
+INSERT INTO `vendas` VALUES (15,2,5);
+INSERT INTO `vendas` VALUES (16,34,25);
+INSERT INTO `vendas` VALUES (17,2,16);
+INSERT INTO `vendas` VALUES (18,63,33);
+INSERT INTO `vendas` VALUES (19,8,6);
+INSERT INTO `vendas` VALUES (20,6,21);
+INSERT INTO `vendas` VALUES (21,34,0);
+INSERT INTO `vendas` VALUES (22,4,15);
+INSERT INTO `vendas` VALUES (23,2,31);
+INSERT INTO `vendas` VALUES (24,1,51);
+INSERT INTO `vendas` VALUES (25,5,5);
+INSERT INTO `vendas` VALUES (26,5,15);
+INSERT INTO `vendas` VALUES (27,8,15);
+INSERT INTO `vendas` VALUES (28,4,3);
+INSERT INTO `vendas` VALUES (29,7,33);
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
