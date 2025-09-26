@@ -25,7 +25,6 @@ h1 {
 .main { 
     flex: 2; 
 }
-
 .section {
     background: #fff;
     border-radius: 10px;
@@ -84,45 +83,76 @@ a.url:hover { text-decoration: underline; }
 
 <h1>
     Manual de Acesso á
-    <img src="../imagens/logo4.png" alt="Manual" style="height:40px; vertical-align:middle; margin-left:10px;">
+    <img src="./imagens/logo4.png" alt="Manual" style="height:40px; vertical-align:middle; margin-left:10px;">
 </h1>
 
 <div class="container">
-    <!-- Conteúdo principal -->
     <div class="main">
-        <!-- Histórico -->
         <div class="section">
-            <h2>📄 Histórico / Log de Versões</h2>
+            <h2> Histórico / Log de Versões</h2>
             <table>
                 <tr><th>Data</th><th>Versão</th><th>Observações</th></tr>
-                <tr><td>2025-09-06</td><td>1.5</td><td>Manual completo com todas entidades</td></tr>
+                <tr><td>2025-09-22</td><td>1.4</td><td>Implementado validação por Token!</td></tr>
+                <tr><td>2025-09-19</td><td>1.3</td><td>Em manutenção para atualização do acesso! Adicionado no banco uma nova tabela para armazenamento dos usuarios do WS somente. Sistema de acesso mudará para a necessidade de um cadastro, mediante aprovação minha na solicitaçao, para assim poder ter acesso aos dados! (Previsão de implementação 26/09/2025)</td></tr>
+                <tr><td>2025-09-12</td><td>1.2</td><td>Necessária Atualização do acesso! (login e token)</td></tr>
+                <tr><td>2025-09-06</td><td>1.1</td><td>Manual completo com todas entidades</td></tr>
                 <tr><td>2025-08-01</td><td>1.0</td><td>Versão inicial</td></tr>
             </table>
         </div>
-
-        <!-- Dados de acesso -->
         <div class="section">
-            <h2>🔐 Dados de acesso</h2>
+            <h2>Introdução</h2>
+            <p>
+                Este manual de acesso tem como objetivo orientar os clientes sobre como utilizar os serviços disponíveis no sistema ERP. Cada serviço disponibilizado é acessível através de um endpoint específico, que retorna informações em formato JSON. Para acessar os dados, é necessário informar os parâmetros de autenticação fornecidos ( Token) na URL do endpoint.
+            </p>
+            <p>
+                A seguir, detalhamos cada serviço e seu funcionamento:
+            </p>
+            <ul>
+                <li><strong>Funcionarios:</strong> Permite consultar informações dos Funcionarios cadastrados, incluindo nome, CPF e email</li>
+                <li><strong>Produtos:</strong> Lista todos os produtos disponíveis no estoque, com detalhes como nome, descrição, categoria, preço e quantidade.</li>
+                <li><strong>Categorias:</strong> Exibe as categorias de produtos existentes, ajudando a organizar os itens do sistema.</li>
+                <li><strong>Clientes:</strong> Mostra os clientes cadastrados, com dados pessoais e informações de cadastro no sistema.</li>
+                <li><strong>Vendas:</strong> Permite acompanhar as vendas realizadas, incluindo data, cliente, valor total e status da venda.</li>
+                <li><strong>Itens de Venda:</strong> Detalha os produtos de cada venda, incluindo quantidade, preço unitário e subtotal.</li>
+                <li><strong>Receitas:</strong> Lista receitas médicas cadastradas, indicando paciente, médico, data e observações, com o caminho do arquivo PDF.</li>
+            </ul>
+            <h2>Acesso</h2>
+            <p>
+                Como funciona o acesso?
+            </p>
+                <p>
+                1- Primeiramente para acessar qualquer serviço, será necessário o cadastro admiministrador,portanto solicite o seu cadastro na seguinte URL: <a href="http://192.168.0.209/ERP/cadastro.php" target="_blank" class="url">http://192.168.0.209/ERP/cadastro.php</a>
+                <p>Após o cadastro deve aparecer a seguinte mensagem: "Solicitação de administrador enviada para aprovação!" Após essa confirmação, aguarde aprovação minha para liberar o acesso.</p>
+                <p>
+                2- Acesso liberado: Com a confirmação minha de liberação de acesso, voce devera agora clicar em login administrador, ao lado do botao cadastrar, na página de cadastro acessada anteriormente. Após acessar a página de login (<a href="http://192.168.0.209/ERP/json/loginadm.php" target="_blank" class="url">http://192.168.0.209/ERP/json/loginadm.php</a>), coloque seu usuário cadastrado e sua senha,  e deve receber um token que valerá por uma hora apenas!.</p>
+                <p>
+                3- Com o token em mãos acesse o endpoint que deseja obter o Json (produtos, vendas, clientes,ect) e adicione na URL o Token gerado no login admiministrador. Exemplo: "http://192.168.0.209/ERP/json/produtos_json.php?token=db0130067a131507c7e91430f2a81967493f2e5aeb6d5858a2d82611f6f97bd0"
+            </p>
+            <p>
+                Qualquer dúvida de acesso, erro e bugs, favor mandar email para arthur.appel@aluno.unc.br.
+            </p>
+        </div>
+        <div class="section">
+            <h2> Dados de acesso</h2>
             <table>
-                <tr><th>Parâmetro</th><th>Valor</th></tr>
-                <tr><td>CDU</td><td>9</td></tr>
-                <tr><td>Senha</td><td>9</td></tr>
+                <tr><th>Parâmetro</th><th>EX:</th></tr<img src="./imagens/Cadastro.png" alt="Manual" ">
+                <tr><td>Cadastro</td><td> Nome e senha!</td></tr>
+                <tr><td>Aguarde aprovação do cadastro! </td><td> Solicitação de cadastro enviada para administrador</td></tr>
+                <tr><td>Login e geração de token </td><td>EX:Insira o usuario cadastrado e façã login. Se validado  </td></tr>
+                <tr><td>Cole o token na url</td><td>EX:</td></tr>
             </table>
         </div>
-
-        <!-- Serviços disponíveis -->
         <div class="section">
-            <h2>🌐 Serviços disponíveis</h2>
+            <h2> Serviços disponíveis</h2>
 
-            <!-- Usuários -->
             <div class="card">
-                <div class="card-header">👤 Usuários</div>
+                <div class="card-header"> Funcionarios</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/usuarios_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/usuarios_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/funcionarios_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/usuarios_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
-                        <tr><td>cd_usuario</td><td>ID do usuário</td></tr>
-                        <tr><td>ds_usuario</td><td>Nome</td></tr>
+                        <tr><td>cd_funcionario</td><td>ID do usuário</td></tr>
+                        <tr><td>ds_funcionario</td><td>Nome</td></tr>
                         <tr><td>ds_cpf</td><td>CPF</td></tr>
                         <tr><td>ds_email</td><td>Email</td></tr>
                         <tr><td>ds_celular</td><td>Celular</td></tr>
@@ -130,18 +160,16 @@ a.url:hover { text-decoration: underline; }
                         <tr><td>ds_senha</td><td>Senha (hash)</td></tr>
                         <tr><td>dt_nascimento</td><td>Data nascimento</td></tr>
                         <tr><td>ds_situacao</td><td>Situação</td></tr>
-                        <tr><td>tipo_usuario</td><td>Tipo</td></tr>
                     </table>
                     <h4>Exemplo JSON:</h4>
                     <pre>[{"cd_usuario":"2","ds_usuario":"teste","ds_cpf":"333","ds_email":"teste@fdf","ds_celular":"","ds_endereco":"rfsresf","ds_senha":"hash","dt_nascimento":"2000-04-23","ds_situacao":"ativo","tipo_usuario":"cliente"}]</pre>
                 </div>
             </div>
 
-            <!-- Produtos -->
             <div class="card">
-                <div class="card-header">💊 Produtos</div>
+                <div class="card-header">Produtos</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/produtos_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/produtos_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/produtos_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/produtos_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id</td><td>ID do produto</td></tr>
@@ -158,11 +186,10 @@ a.url:hover { text-decoration: underline; }
                 </div>
             </div>
 
-            <!-- Categorias -->
             <div class="card">
-                <div class="card-header">🏷️ Categorias</div>
+                <div class="card-header"> Categorias</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/categorias_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/categorias_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/categorias_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/categorias_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id</td><td>ID da categoria</td></tr>
@@ -174,11 +201,10 @@ a.url:hover { text-decoration: underline; }
                 </div>
             </div>
 
-            <!-- Clientes -->
             <div class="card">
-                <div class="card-header">👥 Clientes</div>
+                <div class="card-header"> Clientes</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/clientes_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/clientes_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/clientes_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/clientes_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id</td><td>ID do cliente</td></tr>
@@ -196,11 +222,10 @@ a.url:hover { text-decoration: underline; }
                 </div>
             </div>
 
-            <!-- Vendas -->
             <div class="card">
-                <div class="card-header">🛒 Vendas</div>
+                <div class="card-header"> Vendas</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/vendas_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/vendas_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/vendas_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/vendas_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id_venda</td><td>ID da venda</td></tr>
@@ -214,11 +239,10 @@ a.url:hover { text-decoration: underline; }
                 </div>
             </div>
 
-            <!-- Itens de Venda -->
             <div class="card">
-                <div class="card-header">📦 Itens de Venda</div>
+                <div class="card-header">Itens de Venda</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/itens_venda_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/itens_venda_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/itens_venda_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/itens_venda_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id_item</td><td>ID do item</td></tr>
@@ -233,11 +257,10 @@ a.url:hover { text-decoration: underline; }
                 </div>
             </div>
 
-            <!-- Receitas -->
             <div class="card">
-                <div class="card-header">📄 Receitas</div>
+                <div class="card-header"> Receitas</div>
                 <div class="card-content">
-                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/receitas_json.php?cdu=9&pwd=9" target="_blank" class="url">http://192.168.0.209/ERP/json/receitas_json.php?cdu=9&pwd=9</a></p>
+                    <p>Endpoint: <a href="http://192.168.0.209/ERP/json/receitas_json.php?token=?" target="_blank" class="url">http://192.168.0.209/ERP/json/receitas_json.php?token=?</a></p>
                     <table>
                         <tr><th>Campo</th><th>Descrição</th></tr>
                         <tr><td>id</td><td>ID da receita</td></tr>

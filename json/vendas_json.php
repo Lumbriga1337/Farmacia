@@ -1,27 +1,23 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
+include 'funcoes.php';
 
-$cdu = trim($_GET['cdu'] ?? '');
-$pwd = trim($_GET['pwd'] ?? '');
+// Pega o token
+$token = trim($_GET['token'] ?? '');
 
-// 🔐 Autenticação
-if ($cdu != "9" || $pwd != "9") {
-    echo json_encode(["erro" => "Acesso negado"], JSON_UNESCAPED_UNICODE);
+// Valida o token
+$validacao = validarToken($conn, $token);
+if ($validacao !== true) {
+    echo json_encode($validacao, JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Conexão
-$cone = mysqli_connect("localhost", "root", "", "farmacia");
-mysqli_set_charset($cone, "utf8");
+$dados = gerarJson($conn, "vendas", "
+    id_venda,
+    cliente_id,
+    data_venda,
+    valor_total,
+    status
+");
 
-// Consulta categorias
-$sql = "SELECT * FROM vendas";
-$result = $cone->query($sql); // usar $cone
-
-$linhas = [];
-while ($row = $result->fetch_assoc()) { // usar $result
-    $linhas[] = $row;
-}
-
-echo json_encode($linhas, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-?>
+echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

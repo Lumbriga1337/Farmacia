@@ -1,0 +1,29 @@
+[2025-09-20 02:36:54] Email para: arthurappel01@hotmail.com | Status: FALHOU | Usuário: teste3ws | Token: f851aff34a9233c33c533b8ddf158501
+[2025-09-20 14:22:21] Falha ao enviar email | Usuário: teste09 | Token: 22b32e2495ce52e892d07e9db397c11d | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:36:07] Falha ao enviar email | Usuário: teste08 | Token: fade525512fde9208e4aa0b88c091ac6 | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:38:56] Falha ao enviar email | Usuário: 123 | Token: 59f746b9454710b1b9866d7045d006ce | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:40:10] Falha ao enviar email | Usuário: 1234 | Token: 5d5b6ea57cbcff21c9656547f7d47109 | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:45:32] Falha ao enviar email | Usuário: teste345 | Token: 1db454141caea97cfdaa2572c33e5c8f | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:48:04] Falha ao enviar email | Usuário: teste445 | Token: ee1b4b34651aab3dd2720fcaa61ddabc | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:49:47] Falha ao enviar email | Usuário: refse | Token: 748100cd93910a9c3d9f0a4d9ffe20b4 | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 14:51:53] Falha ao enviar email | Usuário: rersfses | Token: cd6be9bdc9f4224f0faea83dce005ef8 | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 15:11:17] Falha ao enviar email | Usuário: tesfyee | Token: 9d3855966817feaebc79206db70608ee | Erro: SMTP Error: Could not authenticate.
+[2025-09-20 15:12:38] Email enviado com sucesso | Usuário: teste33333 | Token: 28b1a6fb7463b77809994eaa520a9522
+[2025-09-20 15:15:36] Email enviado com sucesso | Usuário: teste33333 | Token: 1d37f37522ed89648dd51c860785956b
+[2025-09-20 15:19:24] Email enviado com sucesso | Usuário: tesadsw | Token: ece5420009ef5b6cd70dc533a57674e4
+[2025-09-20 15:23:56] Email enviado com sucesso | Usuário: teSAFEADE | Token: 1313499d45070fb87e88465e510421f2
+[2025-09-20 15:30:22] Email enviado com sucesso | Usuário: TESTE1 | Token: 3ae9b658c8149bc1d91848f1eea84b66
+[2025-09-20 15:32:51] Email enviado com sucesso | Usuário: teste3 | Token: f140e934aaf7f53f05f06ca138c7880e
+[2025-09-20 16:40:21] Email enviado com sucesso | Usuário: ttt | Token: 4f09663efb481833cef1a530db4a4b36
+[2025-09-20 16:50:49] Email enviado com sucesso | Usuário: arthur | Token: dde4a376e6cb0dd60372db030d35c8af
+[2025-09-20 16:51:29] Email enviado com sucesso | Usuário: teste4 | Token: 6b75eb18ba4eccf27a1625b0ddce2cd4
+[2025-09-20 18:31:28] Email enviado com sucesso | Usuário: lara | Token: 488dcb4c5ad50ff4ef1ac56ecfc3e4cc
+[2025-09-22 19:51:49] Email enviado com sucesso | Usuário: 123 | Token: 6ad5313beec90dcb4c690ca5960a47e3
+[2025-09-23 00:09:25] Email enviado com sucesso | Usuário: 1234 | Token: 53312a6e26a4de8eb0327bc095ab7205
+[2025-09-23 00:22:48] Email enviado com sucesso | Usuário: arthur | Token: b5c2748497ffa2084caa93ecda565b52
+[2025-09-23 01:14:30] Email enviado com sucesso | Usuário: joao | Token: 7237a0fd8e72084fb18224a73c0cbaf4
+[2025-09-23 01:28:37] Email enviado com sucesso | Usuário: paula | Token: db30ae43b1ec8a48bd5ec43b8574f5a3
+[2025-09-27 01:00:22] Email enviado com sucesso | Usuário: Pedro Grigolo | Token: 69bf2a9197be625cbfe9195690ac8570
+[2025-09-27 01:07:17] Email enviado com sucesso | Usuário: teste123 | Token: 98a96437d58f90ead73f69b3ec32f902
+[2025-09-27 01:07:39] Email enviado com sucesso | Usuário: teste3333 | Token: c037e6a7dc92a5f631c45bdb4bff42e6
+[2025-09-27 01:15:00] Email enviado com sucesso | Usuário: Max | Token: 432f1820e0cbd36bae1b2e6865a54786
