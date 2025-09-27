@@ -20,5 +20,7 @@ $dados = gerarJson($conn, "itens_venda", "
     subtotal
 ");
 
+
+
 echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 

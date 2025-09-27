@@ -27,3 +27,4 @@
 [2025-09-27 01:07:17] Email enviado com sucesso | Usuário: teste123 | Token: 98a96437d58f90ead73f69b3ec32f902
 [2025-09-27 01:07:39] Email enviado com sucesso | Usuário: teste3333 | Token: c037e6a7dc92a5f631c45bdb4bff42e6
 [2025-09-27 01:15:00] Email enviado com sucesso | Usuário: Max | Token: 432f1820e0cbd36bae1b2e6865a54786
+[2025-09-27 02:45:01] Email enviado com sucesso | Usuário: Pedro Grigolo | Token: c7dd796328e5aa6dc8ae252d88b8509d

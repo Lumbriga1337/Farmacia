@@ -24,4 +24,5 @@ $dados = gerarJson($conn, "clientes", "
     data_cadastro
 ");
 
+
 echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

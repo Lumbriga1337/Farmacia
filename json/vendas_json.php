@@ -20,4 +20,5 @@ $dados = gerarJson($conn, "vendas", "
     status
 ");
 
+
 echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

@@ -5,14 +5,14 @@ include 'funcoes.php';
 // Pega o token
 $token = trim($_GET['token'] ?? '');
 
-// Valida o token
-$validacao = validarToken($conn, $token);
-if ($validacao !== true) {
-    echo json_encode($validacao, JSON_UNESCAPED_UNICODE);
+// Valida o token e retorna os dados do admin
+$adm = validarToken($conn, $token);
+if (isset($adm['erro'])) {
+    echo json_encode($adm, JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Token válido → retorna clientes
+// Token válido → retorna funcionários
 $dados = gerarJson($conn, "funcionarios", "
     cd_funcionario, 
     ds_funcionario, 
@@ -25,4 +25,7 @@ $dados = gerarJson($conn, "funcionarios", "
     ds_situacao
 ");
 
+
+// Retorna os dados em JSON
 echo json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+?>
